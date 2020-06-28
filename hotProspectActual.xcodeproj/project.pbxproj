@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,10 @@
 		D16A655424A84CE300A2C781 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16A655324A84CE300A2C781 /* Assets.xcassets */; };
 		D16A655724A84CE300A2C781 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16A655624A84CE300A2C781 /* Preview Assets.xcassets */; };
 		D16A655A24A84CE300A2C781 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16A655824A84CE300A2C781 /* LaunchScreen.storyboard */; };
+		D16A656524A84D8A00A2C781 /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A656424A84D8A00A2C781 /* ProspectsView.swift */; };
+		D16A656724A84D9800A2C781 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A656624A84D9800A2C781 /* MeView.swift */; };
+		D16A656924A90B9D00A2C781 /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16A656824A90B9D00A2C781 /* Prospect.swift */; };
+		D19668C724A927DD00C8540B /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = D19668C624A927DD00C8540B /* CodeScanner */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,9 @@
 		D16A655624A84CE300A2C781 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D16A655924A84CE300A2C781 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D16A655B24A84CE300A2C781 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D16A656424A84D8A00A2C781 /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
+		D16A656624A84D9800A2C781 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
+		D16A656824A90B9D00A2C781 /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D19668C724A927DD00C8540B /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +70,9 @@
 				D16A655324A84CE300A2C781 /* Assets.xcassets */,
 				D16A655824A84CE300A2C781 /* LaunchScreen.storyboard */,
 				D16A655B24A84CE300A2C781 /* Info.plist */,
+				D16A656324A84D1500A2C781 /* models */,
+				D16A656224A84D0D00A2C781 /* viewmodels */,
+				D16A656124A84D0500A2C781 /* views */,
 				D16A655524A84CE300A2C781 /* Preview Content */,
 			);
 			path = hotProspectActual;
@@ -73,6 +84,30 @@
 				D16A655624A84CE300A2C781 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D16A656124A84D0500A2C781 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				D16A656424A84D8A00A2C781 /* ProspectsView.swift */,
+				D16A656624A84D9800A2C781 /* MeView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		D16A656224A84D0D00A2C781 /* viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = viewmodels;
+			sourceTree = "<group>";
+		};
+		D16A656324A84D1500A2C781 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				D16A656824A90B9D00A2C781 /* Prospect.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,6 +126,9 @@
 			dependencies = (
 			);
 			name = hotProspectActual;
+			packageProductDependencies = (
+				D19668C624A927DD00C8540B /* CodeScanner */,
+			);
 			productName = hotProspectActual;
 			productReference = D16A654A24A84CE200A2C781 /* hotProspectActual.app */;
 			productType = "com.apple.product-type.application";
@@ -119,6 +157,9 @@
 				Base,
 			);
 			mainGroup = D16A654124A84CE200A2C781;
+			packageReferences = (
+				D19668C524A927DD00C8540B /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = D16A654B24A84CE200A2C781 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -146,9 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D16A656524A84D8A00A2C781 /* ProspectsView.swift in Sources */,
+				D16A656924A90B9D00A2C781 /* Prospect.swift in Sources */,
 				D16A654E24A84CE200A2C781 /* AppDelegate.swift in Sources */,
 				D16A655024A84CE200A2C781 /* SceneDelegate.swift in Sources */,
 				D16A655224A84CE200A2C781 /* ContentView.swift in Sources */,
+				D16A656724A84D9800A2C781 /* MeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +384,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D19668C524A927DD00C8540B /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D19668C624A927DD00C8540B /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D19668C524A927DD00C8540B /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D16A654224A84CE200A2C781 /* Project object */;
 }
