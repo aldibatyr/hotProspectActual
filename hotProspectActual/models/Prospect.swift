@@ -17,10 +17,13 @@ class Prospect: Identifiable, Codable {
 
 class Prospects: ObservableObject {
     static let saveKey = "SavedData"
+    static let saveFile = "saveddata.json"
     @Published private(set) var people: [Prospect]
     
     init() {
-        if let data = UserDefaults.standard.data(forKey: Self.saveKey) {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        
+        if let data = try? Data(contentsOf: paths[0].appendingPathComponent(Self.saveFile)) {
             if let decoded = try? JSONDecoder().decode([Prospect].self, from: data) {
                 self.people = decoded
                 return
@@ -31,7 +34,13 @@ class Prospects: ObservableObject {
     
     private func save() {
         if let encoded = try? JSONEncoder().encode(people) {
-            UserDefaults.standard.set(encoded, forKey: Self.saveKey)
+            let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+            let url = paths[0].appendingPathComponent(Self.saveFile)
+            do {
+                try encoded.write(to: url)
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
     
